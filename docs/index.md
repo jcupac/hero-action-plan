@@ -1,3 +1,3 @@
 # ATDD Sandbox Project
 
-Welcome to my ATDD Sandbox Project!  
+[System Behavior (Use Cases)](system-behavior.md)
