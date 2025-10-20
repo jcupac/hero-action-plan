@@ -9,6 +9,9 @@ This is an ATDD Sandbox Project. I'm making it to learn how to write clear accep
 - ATDD Accelerator: https://atdd-accelerator.optivem.com/
 - Valentina Jemuović: https://www.linkedin.com/in/valentinajemuovic/
 
+Project Boards
+- https://github.com/users/jcupac/projects/1
+
 Documentation
 - https://jcupac.github.io/hero-action-plan/
 
