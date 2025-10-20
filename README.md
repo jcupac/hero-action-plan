@@ -1,5 +1,7 @@
 # hero-action-plan
 
+## Hero Action Plan App
+
 This is an ATDD Sandbox Project. I'm making it to learn how to write clear acceptance tests before implementing functionality, and to understand how tests can guide development. By using a simple, self-contained project, I can focus on improving my testing and development skills without worrying about production issues.
 
 - ATDD Accelerator: https://atdd-accelerator.optivem.com/
