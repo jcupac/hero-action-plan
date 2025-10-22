@@ -1,4 +1,6 @@
-# System - Monolith (TypeScript)
+# Monolith (Java)
+
+This is a sample monolithic application written in Java.
 
 ## Instructions
 
@@ -14,40 +16,34 @@ Check that you have Powershell 7
 $PSVersionTable.PSVersion
 ```
 
-Check that you have Node.js 22 installed
+Set the JAVA_HOME environment variable to point to your JDK 21 installation. Check that it's set correctly
 
 ```shell
-node -v
+echo $env:JAVA_HOME
 ```
 
-Install dependencies
+Ensure you have JDK 21 installed
 
 ```shell
-npm install
+java -version
 ```
 
-Install NestJS CLI
+Build the application using Gradle
 
 ```shell
-npm install -g @nestjs/cli
-```
-
-Build the application
-
-```shell
-npm run build
+.\gradlew build
 ```
 
 Run the application
 
 ```shell
-npm run start
+.\gradlew bootRun
 ```
 
-Restart the application
+Rebuild and restart the application
 
 ```shell
-npm run build && npm run start
+.\gradlew build && .\gradlew bootRun
 ```
 
 App should now be running on:

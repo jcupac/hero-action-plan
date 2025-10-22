@@ -1,24 +1,9 @@
-# Stage 1: Build the app
-FROM node:22-alpine AS build
+FROM eclipse-temurin:21-jdk-alpine
+
 WORKDIR /app
 
-# Install dependencies
-COPY package*.json ./
-RUN npm ci
+COPY build/libs/*.jar app.jar
 
-# Copy source code and build
-COPY . .
-RUN npm run build
+EXPOSE 8080
 
-# Stage 2: Run the app
-FROM node:22-alpine
-WORKDIR /app
-
-# Copy built files and dependencies from build stage
-COPY --from=build /app ./
-
-# Expose port (adjust if your app uses a different port)
-EXPOSE 3000
-
-# Start the app (adjust if your entry point is different)
-CMD ["npm", "start"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
