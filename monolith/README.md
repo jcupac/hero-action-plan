@@ -1,4 +1,4 @@
-# System - Monolith (C#)
+# System - Monolith (TypeScript)
 
 ## Instructions
 
@@ -14,22 +14,40 @@ Check that you have Powershell 7
 $PSVersionTable.PSVersion
 ```
 
-Ensure you have .NET 8:
+Check that you have Node.js 22 installed
 
 ```shell
-dotnet --version
+node -v
 ```
 
-To build the project:
+Install dependencies
 
 ```shell
-dotnet build
+npm install
 ```
 
-To run:
+Install NestJS CLI
 
 ```shell
-dotnet run
+npm install -g @nestjs/cli
+```
+
+Build the application
+
+```shell
+npm run build
+```
+
+Run the application
+
+```shell
+npm run start
+```
+
+Restart the application
+
+```shell
+npm run build && npm run start
 ```
 
 App should now be running on:

@@ -1,19 +1,24 @@
-# Use the official .NET SDK image for build
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+# Stage 1: Build the app
+FROM node:22-alpine AS build
 WORKDIR /app
 
-# Copy csproj and restore as distinct layers
-COPY *.csproj ./
-RUN dotnet restore
+# Install dependencies
+COPY package*.json ./
+RUN npm ci
 
-# Copy everything else and build
-COPY . ./
-RUN dotnet publish Optivem.AtddAccelerator.Template.Monolith.csproj -c Release -o out
+# Copy source code and build
+COPY . .
+RUN npm run build
 
-# Use the official ASP.NET runtime image for the app
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# Stage 2: Run the app
+FROM node:22-alpine
 WORKDIR /app
-COPY --from=build /app/out ./
 
-# Set the entry point
-ENTRYPOINT ["dotnet", "Optivem.AtddAccelerator.Template.Monolith.dll"]
+# Copy built files and dependencies from build stage
+COPY --from=build /app ./
+
+# Expose port (adjust if your app uses a different port)
+EXPOSE 3000
+
+# Start the app (adjust if your entry point is different)
+CMD ["npm", "start"]
