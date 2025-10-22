@@ -1,4 +1,4 @@
-# System Test (Java)
+# System Test (.NET)
 
 ## Instructions
 
@@ -23,13 +23,13 @@ docker compose up -d
 Run All Tests
 
 ```shell
-.\gradlew test
+dotnet test
 ```
 
 Run Smoke Tests Only
 
 ```shell
-.\gradlew test --tests com.optivem.atddaccelerator.template.systemtest.smoketests.*
+dotnet test --filter "FullyQualifiedName~Optivem.AtddAccelerator.Template.SystemTest.SmokeTests"
 ```
 
 Stop Docker Containers
