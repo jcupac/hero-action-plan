@@ -1,4 +1,4 @@
-# System Test (TypeScript)
+# System Test (Java)
 
 ## Instructions
 
@@ -14,24 +14,6 @@ Check that you have Powershell 7
 $PSVersionTable.PSVersion
 ```
 
-Check that you have Node.js 22 installed
-
-```shell
-node -v
-```
-
-Install dependencies
-
-```shell
-npm install
-```
-
-Install Playwright
-
-```shell
-npx playwright install
-```
-
 Start Docker Containers
 
 ```shell
@@ -41,13 +23,13 @@ docker compose up -d
 Run All Tests
 
 ```shell
-npm test
+.\gradlew test
 ```
 
 Run Smoke Tests Only
 
 ```shell
-npm test -- test/smoke-tests
+.\gradlew test --tests com.optivem.atddaccelerator.template.systemtest.smoketests.*
 ```
 
 Stop Docker Containers
